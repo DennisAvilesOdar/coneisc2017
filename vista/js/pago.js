@@ -1,3 +1,4 @@
+var service = "../controladores/";
 $(document).ready(function () {
     cargarComboUsuarios("#cbousuarios", "todos");
     listar();
