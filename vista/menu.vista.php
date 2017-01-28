@@ -9,7 +9,7 @@
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
         <li class="dropdown">
-            <a href="index.php" class="dropdown-toggle">&nbsp;Inicio</a>
+            <a href="principal.vista.php" class="dropdown-toggle"><i class="fa fa-home"></i>&nbsp;Inicio</a>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-edit"></i>&nbsp;Mantenimientos <span class="caret"></span></a>
@@ -23,12 +23,37 @@
           </ul>
         </li>
     </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown" onclick="cerrarSesion()">
+            <a class="dropdown-toggle">
+                <script>
+                function cerrarSesion(){
+                    swal({
+                        title: "Saliendo del Sistema",
+                        text: "¿Desea Cerrar Sesión?",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: '#ff0000',
+                        confirmButtonText: 'Si',
+                        cancelButtonText: "No",
+                        closeOnConfirm: true,
+                        closeOnCancel: true
+                    },
+                            function (isConfirm) {
+
+                                if (isConfirm) { //el usuario hizo clic en el boton SI
+                                    document.location.href = "index.php";
+                                }
+                            });
+                }
+                </script>
+                <i class="fa fa-lock"></i>&nbsp;Cerrar Sesión</a>
+        </li>
+        
+    </ul>
   </div><!-- /.navbar-collapse -->
 
   </div><!-- /.container-fluid -->
 </nav>
 </header>
-
-
-
-
