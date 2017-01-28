@@ -86,7 +86,7 @@ require '../util/funciones/definiciones.php';
                             <label>Desde:&nbsp;</label>
                             <div class="input-group">
                                 <!--<input type="date" id="txtfecha1" class="form-control input-sm" value="<?php echo date('Y-m-d'); ?>"/>-->
-                                <input class="datepicker" date-date-format="dd/mm/yyyy">
+                                <input type="date" id="txtfecha1" class="form-control input-sm" format="dd/mm/yyyy">
                             </div><!-- /.input group -->
                         </div>
                         <div class="col-xs-2">
