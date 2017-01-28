@@ -102,7 +102,7 @@ require '../util/funciones/definiciones.php';
                             <label>Usuarios&nbsp;</label>
                             <select class="form-control input-sm" name="cbousuarios" id="cbousuarios" required="" ></select>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
                             <label>Estado:&nbsp;</label>
                             <select class="form-control input-sm" name="cboestado" id="cboestado" required="" >
                                 <option value="E">Emitido</option>
