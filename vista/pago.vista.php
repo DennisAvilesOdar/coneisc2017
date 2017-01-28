@@ -74,20 +74,20 @@ require '../util/funciones/definiciones.php';
                     <!-- FIN del formulario modal -->
 
                     <div class="row">
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
                             <p> &nbsp;
                                 <select class="form-control input-sm" name="cbotipo" id="cbotipo" required="" >
                                     <option value="1">Por pagar entre:</option>
                                     <option value="2">Registrados entre:</option>
                                 </select></p>
                         </div>
-                        <div class="col-xs-1">
+                        <div class="col-xs-2">
                             <label>Desde:&nbsp;</label>
                             <div class="input-group">
                                 <input type="date" id="txtfecha1" class="form-control input-sm" value="<?php echo date('Y-m-d'); ?>"/>
                             </div><!-- /.input group -->
                         </div>
-                        <div class="col-xs-1">
+                        <div class="col-xs-2">
                             <label>Hasta:&nbsp;</label>
                             <div class="input-group">
                                 <input type="date" id="txtfecha2" class="form-control input-sm" value="<?php echo date('Y-m-d'); ?>"/>
@@ -97,7 +97,7 @@ require '../util/funciones/definiciones.php';
                             <label>Usuarios&nbsp;</label>
                             <select class="form-control input-sm" name="cbousuarios" id="cbousuarios" required="" ></select>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
                             <label>Estado:&nbsp;</label>
                             <select class="form-control input-sm" name="cboestado" id="cboestado" required="" >
                                 <option value="N">Pendiente</option>
