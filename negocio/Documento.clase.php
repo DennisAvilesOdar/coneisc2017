@@ -133,8 +133,8 @@ class Documento extends Conexion {
             if ($sentencia->rowCount()) {
                 $nuevoCodigoDocumento = $resultado["nc"];
                 $this->setCodigo_documento($nuevoCodigoDocumento);
-                $sql = "INSERT INTO documento(codigo_documento, numero_documento, descripcion, monto, fecha_y_hora, estado, codigo_usuario, codigo_tipo_documento)
-                                      VALUES (:p_codigo_documento, :p_numero_documento, :p_descripcion, :p_monto, :p_fecha, 'E', :p_codigo_usuario, :p_codigo_td);";
+                $sql = "INSERT INTO documento(codigo_documento, numero_documento, descripcion, monto, fecha_y_hora, foto, estado, codigo_usuario, codigo_tipo_documento)
+                                      VALUES (:p_codigo_documento, :p_numero_documento, :p_descripcion, :p_monto, :p_fecha, :p_foto,'E', :p_codigo_usuario, :p_codigo_td);";
 
                 $sentencia = $this->dblink->prepare($sql);
 
@@ -143,6 +143,7 @@ class Documento extends Conexion {
                 $sentencia->bindParam(":p_descripcion", $this->getDescripcion());
                 $sentencia->bindParam(":p_monto", $this->getMonto());
                 $sentencia->bindParam(":p_fecha", date("Y-m-d"));
+                $sentencia->bindParam(":p_foto", pg_escape_bytea(file_get_contents($this->getFoto())));
                 $sentencia->bindParam(":p_codigo_usuario", $this->getCodigo_usuario());
                 $sentencia->bindParam(":p_codigo_td", $this->getCodigo_tipo_documento());
                 //Ejecutar la sentencia preparada
