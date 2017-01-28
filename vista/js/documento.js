@@ -226,7 +226,7 @@ $("#frmgrabar").submit(function(evento){
         return 0;
     }
     
-    var archivo_foto = $('#txtfoto').prop('files')[0];
+    var archivo_foto = $('#foto').prop('files')[0];
     
     var datos_frm = new FormData();
     datos_frm.append( "p_datos", $("#frmgrabar").serialize() );
