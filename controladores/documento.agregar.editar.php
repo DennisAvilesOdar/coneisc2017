@@ -3,7 +3,7 @@
 header('Access-Control-Allow-Origin: *');
 require_once '../negocio/Documento.clase.php';
 require_once '../util/funciones/Funciones.clase.php';
-if (!isset($_POST["p_datosFormulario"])) {
+if (!isset($_POST["p_datos"])) {
     Funciones::imprimeJSON(500, "Faltan parametros.", "");
     exit();
 }
