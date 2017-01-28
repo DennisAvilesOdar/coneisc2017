@@ -221,51 +221,37 @@ function eliminar(codigoDocumento) {
 
 $("#frmgrabar").submit(function(evento){
     evento.preventDefault();
-    swal({
-        title: "Confirme",
-        text: "¿Esta seguro de grabar los datos ingresados?",
-        showCancelButton: true,
-        confirmButtonColor: '#3d9205',
-        confirmButtonText: 'Si',
-        cancelButtonText: "No",
-        closeOnConfirm: false,
-        closeOnCancel: true,
-        imageUrl: "../imagenes/pregunta.png"
-    },
-        function(isConfirm){
-            if(isConfirm){
-                var archivo_foto = $('#txtfoto').prop('files')[0];
     
-                var datos_frm = new FormData();
-                datos_frm.append( "p_datos", $("#frmgrabar").serialize() );
-                datos_frm.append( "p_foto", archivo_foto);
-                
-                $.ajax({
-                    url: service+"documento.agregar.editar.php",
-                    dataType: 'text',  
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    data: datos_frm,                         
-                    type: 'post',
-                    success: function(resultado){
-                        var datosJSON = resultado;
-                        if (datosJSON.estado === 200) {
-                            swal("Exito", datosJSON.mensaje, "success");
-                            $("#btncerrar").click(); //cerrar ventana
-                            listar();//refrescar los datos
-                        } else {
-                            swal("Mensaje del sistema", resultado, "warning");
-                        }
-                    },
-                    error: function(error){
-                         var datosJSON = $.parseJSON(error.responseText);
-                        swal("Error", datosJSON.mensaje, "error");
-                    }
-                 });
-                
+    if (! confirm("Esta seguro de grabar los datos del producto")){
+        return 0;
+    }
+    
+    var archivo_foto = $('#txtfoto').prop('files')[0];
+    
+    var datos_frm = new FormData();
+    datos_frm.append( "p_datos", $("#frmgrabar").serialize() );
+    datos_frm.append( "p_foto", archivo_foto);
+    
+    $.ajax({
+        url: service+"documento.agregar.editar.php",
+        dataType: 'text',  
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: datos_frm,                         
+        type: 'post',
+        success: function(resultado){
+            //alert(resultado);
+            if (resultado === "exito"){
+                document.location.reload();
             }
-        });
+        },
+        error: function(error){
+             alert(error.responseText);
+        }
+     });
+    
+    
 });
 
 
