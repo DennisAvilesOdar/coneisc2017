@@ -14,6 +14,7 @@ require_once '../util/funciones/definiciones.php';
     <head>
         <meta charset="UTF-8">
         <title><?php echo C_NOMBRE_SOFTWARE; ?></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- Bootstrap 3.3.2 -->
         <link href="../util/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
