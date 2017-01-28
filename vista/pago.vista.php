@@ -74,7 +74,7 @@ require '../util/funciones/definiciones.php';
                     <!-- FIN del formulario modal -->
 
                     <div class="row">
-                        <div class="col-xs-1">
+                        <div class="col-xs-2">
                             <p> &nbsp;
                                 <select class="form-control input-sm" name="cbotipo" id="cbotipo" required="" >
                                     <option value="1">Por pagar entre:</option>
