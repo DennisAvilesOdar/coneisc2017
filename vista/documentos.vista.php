@@ -41,11 +41,6 @@ require '../util/funciones/definiciones.php';
                                             </div>                                            
                                             <div class="row">
                                                 <div class="col-xs-9">
-                                                
-                                                <p><?php echo $codigoUsuario?> </p>
-                                                <p><?php echo $fotoUsuario?> </p>
-                                                <p><?php echo $cargoUsuario?> </p>
-                                                
                                                     <p>Descripción <font color = "red">*</font>
                                                     <input type="text" name="txtdescripcion" id="txtdescripcion" class="form-control input-sm" placeholder="" required=""><p>
                                                 </div>
@@ -60,7 +55,7 @@ require '../util/funciones/definiciones.php';
                                                 </div>
                                                 <div class="col-xs-6">
                                                     <p>Foto de la boleta: </p>
-                                                    <input type="file" name="foto" id="foto">
+                                                    <input type="file" name="foto" id="foto" class="form-control">
                                                 </div>
                                                 
                                             </div>

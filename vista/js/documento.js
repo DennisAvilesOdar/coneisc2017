@@ -237,7 +237,10 @@ $("#frmgrabar").submit(function (evento) {
                 if (isConfirm) { 
                     $.post(
                                service+"documento.agregar.editar.php",
-                            {p_datosFormulario: $("#frmgrabar").serialize()}
+                            {
+                                p_datosFormulario: $("#frmgrabar").serialize(),
+                                p_foto: $('#foto').prop('files')[0]
+                            }
                     ).done(function (resultado) {
                         var datosJSON = resultado;
                         if (datosJSON.estado === 200) {

@@ -10,21 +10,21 @@ if (!isset($_POST["p_datosFormulario"])) {
 $datosFormulario = $_POST["p_datosFormulario"];
 parse_str($datosFormulario, $datosFormularioArray);
 try {
+    
+    if(isset($_FILES["p_foto"])){
+        $foto = $_FILES["p_foto"]["tmp_name"];
+    }else{
+        $foto = null;
+    }
+    
     $objDocumento = new Documento();
     
     $objDocumento->setNumero_documento($datosFormularioArray["txtnumerodocumento"]);
     $objDocumento->setDescripcion($datosFormularioArray["txtdescripcion"]);
     $objDocumento->setMonto($datosFormularioArray["txtmonto"]);
+    $objDocumento->setFoto($foto);
     $objDocumento->setCodigo_usuario($datosFormularioArray["txtusuario"]);
     $objDocumento->setCodigo_tipo_documento($datosFormularioArray["cbotipodocumentomodal"]);
-    
-    if($_GET['foto']){
-        try {
-            $objDocumento->setFoto($datosFormularioArray["foto"]);
-        } catch (Exception $ex) {
-            die($ex->getMessage());
-        }
-    }
     
     if ($datosFormularioArray["txttipooperacion"] == "agregar") {
         $resultado = $objDocumento->agregar();
