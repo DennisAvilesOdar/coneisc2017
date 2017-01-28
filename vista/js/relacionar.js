@@ -1,3 +1,4 @@
+var service = "../controladores/";
 var pagoSeleccionado = "none";
 var documentoSeleccionado = new Array();
 $(document).ready(function () {
