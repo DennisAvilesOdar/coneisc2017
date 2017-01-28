@@ -7,7 +7,7 @@ if (!isset($_POST["p_datosFormulario"])) {
     Funciones::imprimeJSON(500, "Faltan parametros.", "");
     exit();
 }
-$datosFormulario = $_POST["p_datosFormulario"];
+$datosFormulario = $_POST["p_datos"];
 parse_str($datosFormulario, $datosFormularioArray);
 try {
     
