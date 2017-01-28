@@ -17,10 +17,6 @@ try {
         $foto = null;
     }
     
-    print_r($foto);
-    
-    exit;
-    
     $objDocumento = new Documento();
     
     $objDocumento->setNumero_documento($datosFormularioArray["txtnumerodocumento"]);
