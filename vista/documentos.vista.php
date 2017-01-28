@@ -82,13 +82,13 @@ require '../util/funciones/definiciones.php';
                     <!-- FIN del formulario modal -->
 
                     <div class="row">
-                        <div class="col-xs-1">
+                        <div class="col-xs-2">
                             <label>Desde:&nbsp;</label>
                             <div class="input-group">
                                 <input type="date" id="txtfecha1" class="form-control input-sm" value="<?php echo date('Y-m-d'); ?>"/>
                             </div><!-- /.input group -->
                         </div>
-                        <div class="col-xs-1">
+                        <div class="col-xs-2">
                             <label>Hasta:&nbsp;</label>
                             <div class="input-group">
                                 <input type="date" id="txtfecha2" class="form-control input-sm" value="<?php echo date('Y-m-d'); ?>"/>
