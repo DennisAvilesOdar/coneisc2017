@@ -85,7 +85,7 @@ require '../util/funciones/definiciones.php';
                         <div class="col-xs-2">
                             <label>Desde:&nbsp;</label>
                             <div class="input-group">
-                                <input type="date" id="txtfecha1" class="form-control input-sm" format="YYYY-MM-DD" value="2016-11-02"/>
+                                <input type="date" id="txtfecha1" class="form-control input-sm" format="yyyy-mm-dd" value="2016-11-02"/>
                             </div><!-- /.input group -->
                         </div>
                         <div class="col-xs-2">
