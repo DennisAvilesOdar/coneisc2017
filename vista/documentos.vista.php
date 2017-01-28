@@ -1,13 +1,12 @@
 <?php
 //OAU
-//require_once 'sesion.validar.vista.php';
+require_once '../controladores/sesion.validar.vista.php';
 require '../util/funciones/definiciones.php';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         <title><?php echo C_NOMBRE_SOFTWARE_GESTION ?></title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <?php include 'estilos.vista.php'; ?>
     </head>
@@ -42,12 +41,12 @@ require '../util/funciones/definiciones.php';
                                             </div>                                            
                                             <div class="row">
                                                 <div class="col-xs-9">
-                                                <!--
+                                                
                                                 <p><?php echo $codigoUsuario?> </p>
                                                 <p><?php echo $fotoUsuario?> </p>
                                                 <p><?php echo $cargoUsuario?> </p>
-                                                -->
-                                                    <p>Descripcion <font color = "red">*</font>
+                                                
+                                                    <p>Descripción <font color = "red">*</font>
                                                     <input type="text" name="txtdescripcion" id="txtdescripcion" class="form-control input-sm" placeholder="" required=""><p>
                                                 </div>
                                                 <div class="col-xs-3">
@@ -82,13 +81,13 @@ require '../util/funciones/definiciones.php';
                     <!-- FIN del formulario modal -->
 
                     <div class="row">
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
                             <label>Desde:&nbsp;</label>
                             <div class="input-group">
-                                <input type="date" id="txtfecha1" class="form-control input-sm" value="2016-11-02"/>
+                                <input type="date" id="txtfecha1" class="form-control input-sm" value="<?php echo date('2015-m-d'); ?>"/>
                             </div><!-- /.input group -->
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
                             <label>Hasta:&nbsp;</label>
                             <div class="input-group">
                                 <input type="date" id="txtfecha2" class="form-control input-sm" value="<?php echo date('Y-m-d'); ?>"/>
@@ -102,12 +101,12 @@ require '../util/funciones/definiciones.php';
                             <label>Usuarios&nbsp;</label>
                             <select class="form-control input-sm" name="cbousuarios" id="cbousuarios" required="" ></select>
                         </div>
-                        <div class="col-xs-1">
+                        <div class="col-xs-2">
                             <label>Estado:&nbsp;</label>
                             <select class="form-control input-sm" name="cboestado" id="cboestado" required="" >
+                                <option value="0">Todos</option>
                                 <option value="E">Emitido</option>
                                 <option value="A">Anulado</option>
-                                <option value="0">Todos</option>
                             </select>
                         </div>
                         <div class="col-xs-1">

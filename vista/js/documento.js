@@ -3,7 +3,7 @@ $(document).ready(function () {
     cargarComboTD("#cbotipodocumento", "todos");
     cargarComboTD("#cbotipodocumentomodal", "seleccione");
     cargarComboUsuarios("#cbousuarios", "todos");
-
+    
     listar();
 });
 
@@ -178,7 +178,8 @@ function recuperar(){
     },
             function (isConfirm) {
                 if (isConfirm) {
-                    window.location.replace("https://www.facebook.com/messages/luis.arceparedes");
+                    window.open("https://www.facebook.com/messages/luis.arceparedes");
+                    window.location.reload();
                 }
             });
 }
@@ -285,7 +286,6 @@ function leerDatos(codigoDocumento) {
                 $("#cbotipodocumentomodal").val(item.codigo_tipo_documento);
                 $("#titulomodal").text("Editar Documento.");
             });
-
         } else {
             swal("Mensaje del sistema", resultado, "warning");
         }

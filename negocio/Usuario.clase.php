@@ -8,7 +8,6 @@ class Usuario extends Conexion{
     private $contrasena;
     private $codigo_area;
     
-    
     function getCodigo_usuario() {
         return $this->codigo_usuario;
     }
@@ -60,37 +59,6 @@ class Usuario extends Conexion{
             throw $exc;
         }
     }
-    public function listarUsuarioArea( $p_codigo_area) { //filtra con áreas
-        try {
-            $sql = "select * from f_lista_usuario(:p_codigo_area );";
-            $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_codigo_area", $p_codigo_area);
-            $sentencia->execute();
-            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
-        } catch (Exception $exc) {
-            throw $exc;
-        }
-    }
-   
-    public function eliminar( $p_codigo_usuario){
-        $this->dblink->beginTransaction();
-        try {
-            $sql = "delete from usuario where codigo_usuario = :p_codigo_usuario";
-            $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_codigo_usuario", $p_codigo_usuario);
-            $sentencia->execute();
-            
-            $this->dblink->commit();
-            
-            return true;
-        } catch (Exception $exc) {
-            $this->dblink->rollBack();
-            throw $exc;
-        }
-        
-        return false;
-    }
     
     public function leerDatos($p_codigo_usuario) {
         try {
@@ -116,9 +84,5 @@ class Usuario extends Conexion{
         } catch (Exception $exc) {
             throw $exc;
         }
-    }
-    
-    
-    
-    
+    } 
 }

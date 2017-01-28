@@ -43,7 +43,15 @@
                             function (isConfirm) {
 
                                 if (isConfirm) { //el usuario hizo clic en el boton SI
-                                    document.location.href = "index.php";
+                                    var service = "../controladores/";
+                                    $.post(
+                                            service+"sesion.cerrar.controlador.php"
+                                    ).done(function (resultado) {
+                                        document.location.href = "index.php";
+                                    }).fail(function (error) {
+                                        var datosJSON = $.parseJSON(error.responseText);
+                                        swal("Error", datosJSON.mensaje, "error");
+                                    });
                                 }
                             });
                 }

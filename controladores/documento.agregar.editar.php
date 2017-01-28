@@ -18,6 +18,14 @@ try {
     $objDocumento->setCodigo_usuario($datosFormularioArray["txtusuario"]);
     $objDocumento->setCodigo_tipo_documento($datosFormularioArray["cbotipodocumentomodal"]);
     
+    if($_GET['foto']){
+        try {
+            $objDocumento->setFoto($datosFormularioArray["foto"]);
+        } catch (Exception $ex) {
+            die($ex->getMessage());
+        }
+    }
+    
     if ($datosFormularioArray["txttipooperacion"] == "agregar") {
         $resultado = $objDocumento->agregar();
         if ($resultado == true) {
