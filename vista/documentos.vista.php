@@ -85,14 +85,13 @@ require '../util/funciones/definiciones.php';
                         <div class="col-xs-2">
                             <label>Desde:&nbsp;</label>
                             <div class="input-group">
-                                <!--<input type="date" id="txtfecha1" class="form-control input-sm" value="2016-11-02"/-->
-                                <input type="date" id="txtfecha1" class="form-control input-sm" data-date-format="DD-MM-YYYY" value="2016-11-02"/>
+                                <input type="date" id="txtfecha1" class="form-control input-sm" data-date-format="YYYY-MM-DD" value="2016-11-02"/>
                             </div><!-- /.input group -->
                         </div>
                         <div class="col-xs-2">
                             <label>Hasta:&nbsp;</label>
                             <div class="input-group">
-                                <input type="date" id="txtfecha2" class="form-control input-sm" value="<?php echo date('Y-m-d'); ?>"/>
+                                <input type="date" id="txtfecha2" class="form-control input-sm" data-date-format="YYYY-MM-DD" value="<?php echo date('Y-m-d'); ?>"/>
                             </div><!-- /.input group -->
                         </div>
                         <div class="col-xs-2">
