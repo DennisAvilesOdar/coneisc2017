@@ -26,8 +26,9 @@ try {
     if (isset($_FILES['p_foto'])){
         $archivo = $_FILES['p_foto'];
         //$extension = pathinfo($archivo['name'],PATHINFO_EXTENSION);
+        $ruta = "../fotos_documentos/".$archivo['name'];
         
-        if(move_uploaded_file($archivo['tmp_name'], "../fotos_documentos/".$archivo['name'])){
+        if(move_uploaded_file($archivo['tmp_name'], $ruta)){
             $objDocumento->setFoto($target_path);
         }
     }
