@@ -4,8 +4,6 @@ header('Access-Control-Allow-Origin: *');
 require_once '../negocio/Documento.clase.php';
 require_once '../util/funciones/Funciones.clase.php';
 
-$objDocumento = new Documento();
-
 if (!isset($_POST["p_datosFormulario"])) {
     Funciones::imprimeJSON(500, "Faltan parametros.", "");
     exit();
@@ -14,12 +12,20 @@ $datosFormulario = $_POST["p_datosFormulario"];
 parse_str($datosFormulario, $datosFormularioArray);
 try {
     
+    $target_path = "../fotos_documentos/";
+    $target_path = $target_path . basename($_FILES['txtfoto']['name']);
+    
+    $objDocumento = new Documento();
+    
     $objDocumento->setNumero_documento($datosFormularioArray["txtnumerodocumento"]);
     $objDocumento->setDescripcion($datosFormularioArray["txtdescripcion"]);
     $objDocumento->setMonto($datosFormularioArray["txtmonto"]);
     $objDocumento->setCodigo_usuario($datosFormularioArray["txtusuario"]);
     $objDocumento->setCodigo_tipo_documento($datosFormularioArray["cbotipodocumentomodal"]);
     
+    if(move_uploaded_file($_FILES['txtfoto']['tmp_name'], $target_path)){
+        $objDocumento->setFoto(basename($_FILES['txtfoto']['name']));
+    }
     
     if ($datosFormularioArray["txttipooperacion"] == "agregar") {
         $resultado = $objDocumento->agregar();

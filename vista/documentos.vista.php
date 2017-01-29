@@ -20,7 +20,7 @@ require '../util/funciones/definiciones.php';
                 </section>
                 <section class="content">
                     <small>
-                        <form id="frmgrabar">
+                        <form id="frmgrabar" enctype="multipart/form-data" method="post">
                             <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -55,7 +55,7 @@ require '../util/funciones/definiciones.php';
                                                 </div>
                                                 <div class="col-xs-6">
                                                     <p>Foto de la boleta: </p>
-                                                    <input type="file" name="txtfoto" id="txtfoto" class="form-control">
+                                                    <input type="file" name="txtfoto" id="txtfoto">
                                                 </div>
                                                 
                                             </div>
