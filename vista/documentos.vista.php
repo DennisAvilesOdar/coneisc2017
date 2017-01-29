@@ -55,7 +55,7 @@ require '../util/funciones/definiciones.php';
                                                 </div>
                                                 <div class="col-xs-6">
                                                     <p>Foto de la boleta: </p>
-                                                    <input type="file" name="txtfoto" id="txtfoto">
+                                                    <input type="file" name="txtfoto" id="txtfoto" class="form-control">
                                                 </div>
                                                 
                                             </div>

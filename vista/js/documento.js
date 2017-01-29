@@ -242,9 +242,7 @@ $("#frmgrabar").submit(function(evento){
         success: function(resultado){
             //alert(resultado);
             if (resultado === "exito"){
-                $("#btncerrar").click(); //cerrar ventana
-                listar();//refrescar los datos
-                //document.location.reload();
+                document.location.reload();
             }
         },
         error: function(error){

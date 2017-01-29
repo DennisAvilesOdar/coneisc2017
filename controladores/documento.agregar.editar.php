@@ -12,7 +12,7 @@ $datosFormulario = $_POST["p_datosFormulario"];
 parse_str($datosFormulario, $datosFormularioArray);
 try {
     
-    $target_path = "fotos_documentos/";
+    $target_path = "../fotos_documentos/";
     $target_path = $target_path . basename($_FILES['p_foto']['name']);
     
     $objDocumento = new Documento();
