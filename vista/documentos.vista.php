@@ -3,12 +3,7 @@
 require_once '../controladores/sesion.validar.vista.php';
 require '../util/funciones/definiciones.php';
 
-if (isset($_FILES['txtfoto']))
-    {
-        $archivo = $_FILES['txtfoto'];
-        //$extension = pathinfo($archivo['name'],PATHINFO_EXTENSION);
-        move_uploaded_file($archivo['tmp_name'], "/".$archivo['name']);
-    }
+echo "<img src='../fotos_documentos/5.jpg'>";
 ?>
 <html>
     <head>

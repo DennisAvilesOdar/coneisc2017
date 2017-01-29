@@ -12,8 +12,8 @@ $datosFormulario = $_POST["p_datosFormulario"];
 parse_str($datosFormulario, $datosFormularioArray);
 try {
     
-    //$target_path = "../fotos_documentos/";
-    //$target_path = $target_path . basename($_FILES['p_foto']['name']);
+    $target_path = "../fotos_documentos/";
+    $target_path = $target_path . basename($_FILES['p_foto']['name']);
     
     $objDocumento = new Documento();
     
@@ -24,12 +24,8 @@ try {
     $objDocumento->setCodigo_tipo_documento($datosFormularioArray["cbotipodocumentomodal"]);
     
     if (isset($_FILES['p_foto'])){
-        $archivo = $_FILES['p_foto'];
-        //$extension = pathinfo($archivo['name'],PATHINFO_EXTENSION);
-        $ruta = "/".$archivo['name'];
-        
-        if(move_uploaded_file($archivo['tmp_name'], $ruta)){
-            $objDocumento->setFoto($ruta);
+        if(move_uploaded_file($_FILES['p_foto']['tmp_name'], $target_path)){
+            $objDocumento->setFoto($target_path);
         }
     }
     
