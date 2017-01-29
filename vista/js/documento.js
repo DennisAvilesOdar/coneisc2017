@@ -277,7 +277,7 @@ $("#frmgrabar").submit(function (evento) {
                             }
                     ).done(function (resultado) {
                         var datosJSON = resultado;
-                        alert($("#frmgrabar").serialize());
+                        alert($("#txtfoto"));
                         if (datosJSON.estado === 200) {
                             swal("Exito", datosJSON.mensaje, "success");
                             $("#btncerrar").click(); //cerrar ventana
