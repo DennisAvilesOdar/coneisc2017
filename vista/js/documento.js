@@ -3,7 +3,6 @@ $(document).ready(function () {
     cargarComboTD("#cbotipodocumento", "todos");
     cargarComboTD("#cbotipodocumentomodal", "seleccione");
     cargarComboUsuarios("#cbousuarios", "todos");
-    alert('cualquier mamada xD ');
     listar();
 });
 
@@ -230,6 +229,8 @@ $("#frmgrabar").submit(function(evento){
     var datos_frm = new FormData();
     datos_frm.append( "p_datosFormulario", $("#frmgrabar").serialize() );
     datos_frm.append( "p_foto", archivo_foto);
+    
+    alert(datos_frm);
     
     $.ajax({
         url: "../controladores/documento.agregar.editar.php",

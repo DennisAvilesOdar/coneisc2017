@@ -20,8 +20,6 @@ try {
         $foto = null;
     }
     
-    alert($foto);
-    
     $objDocumento->setNumero_documento($datosFormularioArray["txtnumerodocumento"]);
     $objDocumento->setDescripcion($datosFormularioArray["txtdescripcion"]);
     $objDocumento->setMonto($datosFormularioArray["txtmonto"]);
