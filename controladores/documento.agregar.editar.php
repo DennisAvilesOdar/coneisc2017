@@ -12,8 +12,8 @@ $datosFormulario = $_POST["p_datosFormulario"];
 parse_str($datosFormulario, $datosFormularioArray);
 try {
     
-    $target_path = "../fotos_documentos/";
-    $target_path = $target_path . basename($_FILES['txtfoto']['name']);
+    $target_path = "fotos_documentos/";
+    $target_path = $target_path . basename($_FILES['p_foto']['name']);
     
     $objDocumento = new Documento();
     
@@ -23,8 +23,8 @@ try {
     $objDocumento->setCodigo_usuario($datosFormularioArray["txtusuario"]);
     $objDocumento->setCodigo_tipo_documento($datosFormularioArray["cbotipodocumentomodal"]);
     
-    if(move_uploaded_file($_FILES['txtfoto']['tmp_name'], $target_path)){
-        $objDocumento->setFoto(basename($_FILES['txtfoto']['name']));
+    if(move_uploaded_file($_FILES['p_foto']['tmp_name'], $target_path)){
+        $objDocumento->setFoto(basename($_FILES['p_foto']['name']));
     }
     
     if ($datosFormularioArray["txttipooperacion"] == "agregar") {
