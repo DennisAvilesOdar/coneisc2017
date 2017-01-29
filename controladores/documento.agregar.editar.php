@@ -14,18 +14,12 @@ $datosFormulario = $_POST["p_datosFormulario"];
 parse_str($datosFormulario, $datosFormularioArray);
 try {
     
-    if (isset($_FILES["p_foto"])){
-        $foto = $_FILES["p_foto"]["tmp_name"];
-    }else{
-        $foto = null;
-    }
-    
     $objDocumento->setNumero_documento($datosFormularioArray["txtnumerodocumento"]);
     $objDocumento->setDescripcion($datosFormularioArray["txtdescripcion"]);
     $objDocumento->setMonto($datosFormularioArray["txtmonto"]);
     $objDocumento->setCodigo_usuario($datosFormularioArray["txtusuario"]);
     $objDocumento->setCodigo_tipo_documento($datosFormularioArray["cbotipodocumentomodal"]);
-    $objDocumento->setFoto($foto);
+    
     
     if ($datosFormularioArray["txttipooperacion"] == "agregar") {
         $resultado = $objDocumento->agregar();
