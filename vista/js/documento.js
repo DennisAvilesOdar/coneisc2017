@@ -217,7 +217,7 @@ function eliminar(codigoDocumento) {
             });
 }
 
-$("#frmgrabar").submit(function(evento){
+/*$("#frmgrabar").submit(function(evento){
     evento.preventDefault();
     
     if (! confirm("Esta seguro de grabar los datos del producto")){
@@ -253,9 +253,9 @@ $("#frmgrabar").submit(function(evento){
      });
     
     
-});
+});*/
 
-/*$("#frmgrabar").submit(function (evento) {
+$("#frmgrabar").submit(function (evento) {
     evento.preventDefault();
     swal({
         title: "Confirme",
@@ -278,6 +278,7 @@ $("#frmgrabar").submit(function(evento){
                             }
                     ).done(function (resultado) {
                         var datosJSON = resultado;
+                        alert($("#frmgrabar").serialize());
                         if (datosJSON.estado === 200) {
                             swal("Exito", datosJSON.mensaje, "success");
                             $("#btncerrar").click(); //cerrar ventana
@@ -291,7 +292,7 @@ $("#frmgrabar").submit(function(evento){
                     });
                 }
             });
-});*/
+});
 
 $("#btnagregar").click(function () {
     $("#txttipooperacion").val("agregar");
