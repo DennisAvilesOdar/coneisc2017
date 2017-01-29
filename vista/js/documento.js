@@ -271,10 +271,9 @@ $("#frmgrabar").submit(function (evento) {
             function (isConfirm) {
                 if (isConfirm) { 
                     $.post(
-                               service+"documento.agregar.editar.php",
+                               "../controladores/documento.agregar.editar.php",
                             {
-                                p_datosFormulario: $("#frmgrabar").serialize(),
-                                p_foto: $('#txtfoto').prop('files')[0]
+                                p_datosFormulario: $("#frmgrabar").serialize()
                             }
                     ).done(function (resultado) {
                         var datosJSON = resultado;
