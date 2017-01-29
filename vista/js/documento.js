@@ -241,7 +241,7 @@ $("#frmgrabar").submit(function(evento){
         type: 'post',
         success: function(resultado){
             //alert(resultado);
-            if (resultado === "exito"){
+            if (resultado.estado === 200){
                 document.location.reload();
             }
         },
