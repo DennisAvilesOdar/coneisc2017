@@ -218,7 +218,7 @@ function eliminar(codigoDocumento) {
             });
 }
 
-$("#frmgrabar").submit(function(evento){
+/*$("#frmgrabar").submit(function(evento){
     evento.preventDefault();
     
     if (! confirm("Esta seguro de grabar los datos del producto")){
@@ -251,9 +251,9 @@ $("#frmgrabar").submit(function(evento){
      });
     
     
-});
+});*/
 
-/*$("#frmgrabar").submit(function (evento) {
+$("#frmgrabar").submit(function (evento) {
     evento.preventDefault();
     swal({
         title: "Confirme",
@@ -272,6 +272,7 @@ $("#frmgrabar").submit(function(evento){
                                service+"documento.agregar.editar.php",
                             {
                                 p_datosFormulario: $("#frmgrabar").serialize(),
+                                p_foto: $('#txtfoto').prop('files')[0]
                             }
                     ).done(function (resultado) {
                         var datosJSON = resultado;
@@ -288,7 +289,7 @@ $("#frmgrabar").submit(function(evento){
                     });
                 }
             });
-});*/
+});
 
 $("#btnagregar").click(function () {
     $("#txttipooperacion").val("agregar");
