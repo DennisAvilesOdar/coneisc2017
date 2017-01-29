@@ -225,12 +225,13 @@ $("#frmgrabar").submit(function(evento){
     }
     
     var archivo_foto = $('#txtfoto').prop('files')[0];
+    var serie = $("#frmgrabar").serialize();
     
     var datos_frm = new FormData();
     datos_frm.append( "p_datosFormulario", $("#frmgrabar").serialize() );
     datos_frm.append( "p_foto", archivo_foto);
     
-    alert(datos_frm);
+    alert(serie);
     
     $.ajax({
         url: "../controladores/documento.agregar.editar.php",
