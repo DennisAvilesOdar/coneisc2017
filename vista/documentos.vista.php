@@ -3,7 +3,6 @@
 require_once '../controladores/sesion.validar.vista.php';
 require '../util/funciones/definiciones.php';
 
-echo "<img src='../fotos_documentos/5.jpg'>";
 ?>
 <html>
     <head>
@@ -58,6 +57,7 @@ echo "<img src='../fotos_documentos/5.jpg'>";
                                                 <div class="col-xs-6">
                                                     <p>Foto de la boleta: </p>
                                                     <input type="file" name="txtfoto" id="txtfoto" class="form-control">
+                                                    <?php echo "<img src='.txtfoto'>"; ?>
                                                 </div>
                                                 
                                             </div>
