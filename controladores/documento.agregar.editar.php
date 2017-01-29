@@ -14,6 +14,7 @@ try {
     $nombre_img = $_FILES['imagen']['name'];
     $tipo_img = $_FILES['imagen']['type'];
     $tamano = $_FILES['imagen']['size'];
+    $directorio = $_SERVER['DOCUMENT_ROOT'].'/fotos_documentos/';
     
     $objDocumento = new Documento();
     
@@ -22,21 +23,9 @@ try {
     $objDocumento->setMonto($datosFormularioArray["txtmonto"]);
     $objDocumento->setCodigo_usuario($datosFormularioArray["txtusuario"]);
     $objDocumento->setCodigo_tipo_documento($datosFormularioArray["cbotipodocumentomodal"]);
+    $objDocumento->setFoto($nombre_img);
     
-    if(($nombre_img == !NULL) && ($tamano <= 200000)){
-        if (($tipo_img == "image/gif") || ($tipo_img == "image/jpeg") || ($tipo_img == "image/jpg") || ($tipo_img == "image/png")){
-            $directorio = '../fotos_documentos/';
-            move_uploaded_file($_FILES['imagen']['tmp_name'], $directorio.$nombre_img);
-            $objDocumento->setFoto($directorio.$nombre_img);
-        }else{
-            echo "Formato incorrecto";
-        }
-    } else {
-        if($nombre_img == !NULL){
-            echo "Imagen muy grande";
-        }
-    }
-    
+    move_uploaded_file($_FILES['imagen']['tmp_name'], $directorio.$nombre_img);
     
     if ($datosFormularioArray["txttipooperacion"] == "agregar") {
         $resultado = $objDocumento->agregar();
