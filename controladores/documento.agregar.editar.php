@@ -23,8 +23,10 @@ try {
     $objDocumento->setCodigo_usuario($datosFormularioArray["txtusuario"]);
     $objDocumento->setCodigo_tipo_documento($datosFormularioArray["cbotipodocumentomodal"]);
     
-    if(move_uploaded_file($_FILES['p_foto']['tmp_name'], $target_path)){
-        $objDocumento->setFoto($target_path);
+    if (isset($_FILES['p_foto'])){
+        if(move_uploaded_file($_FILES['p_foto']['tmp_name'], $target_path)){
+            $objDocumento->setFoto($target_path);
+        }
     }
     
     if ($datosFormularioArray["txttipooperacion"] == "agregar") {
