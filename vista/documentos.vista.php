@@ -7,7 +7,7 @@ if (isset($_FILES['txtfoto']))
     {
         $archivo = $_FILES['txtfoto'];
         //$extension = pathinfo($archivo['name'],PATHINFO_EXTENSION);
-        move_uploaded_file($archivo['tmp_name'], "../fotos_documentos/".$archivo['name']);
+        move_uploaded_file($archivo['tmp_name'], "/".$archivo['name']);
     }
 ?>
 <html>
