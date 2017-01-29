@@ -3,6 +3,9 @@
 header('Access-Control-Allow-Origin: *');
 require_once '../negocio/Documento.clase.php';
 require_once '../util/funciones/Funciones.clase.php';
+
+$objDocumento = new Documento();
+
 if (!isset($_POST["p_datosFormulario"])) {
     Funciones::imprimeJSON(500, "Faltan parametros.", "");
     exit();
@@ -16,8 +19,6 @@ try {
     }else{
         $foto = null;
     }
-    
-    $objDocumento = new Documento();
     
     $objDocumento->setNumero_documento($datosFormularioArray["txtnumerodocumento"]);
     $objDocumento->setDescripcion($datosFormularioArray["txtdescripcion"]);

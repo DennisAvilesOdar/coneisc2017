@@ -124,7 +124,7 @@ class Documento extends Conexion {
 
     public function agregar() {
         $this->dblink->beginTransaction();
-
+        
         try {
             $sql = "select * from f_generar_correlativo('documento') as nc";
             $sentencia = $this->dblink->prepare($sql);
@@ -162,7 +162,7 @@ class Documento extends Conexion {
                 $sentencia->execute();
                 
                 if ($this->getFoto() != null){
-                    $this->cargarFoto($this->getFoto(), $this->getIdproducto());
+                    $this->cargarFoto($this->getFoto(), $this->getCodigo_documento());
                 }
                 
                 $this->dblink->commit();

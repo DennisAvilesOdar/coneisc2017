@@ -218,7 +218,7 @@ function eliminar(codigoDocumento) {
             });
 }
 
-/*$("#frmgrabar").submit(function(evento){
+$("#frmgrabar").submit(function(evento){
     evento.preventDefault();
     
     if (! confirm("Esta seguro de grabar los datos del producto")){
@@ -232,7 +232,7 @@ function eliminar(codigoDocumento) {
     datos_frm.append( "p_foto", archivo_foto);
     
     $.ajax({
-        url: service+"documento.agregar.editar.php",
+        url: "../controladores/documento.agregar.editar.php",
         dataType: 'text',  
         cache: false,
         contentType: false,
@@ -251,9 +251,9 @@ function eliminar(codigoDocumento) {
      });
     
     
-});*/
+});
 
-$("#frmgrabar").submit(function (evento) {
+/*$("#frmgrabar").submit(function (evento) {
     evento.preventDefault();
     swal({
         title: "Confirme",
@@ -289,7 +289,7 @@ $("#frmgrabar").submit(function (evento) {
                     });
                 }
             });
-});
+});*/
 
 $("#btnagregar").click(function () {
     $("#txttipooperacion").val("agregar");
