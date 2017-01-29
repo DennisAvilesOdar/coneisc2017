@@ -3,7 +3,7 @@ $(document).ready(function () {
     cargarComboTD("#cbotipodocumento", "todos");
     cargarComboTD("#cbotipodocumentomodal", "seleccione");
     cargarComboUsuarios("#cbousuarios", "todos");
-    
+    alert('cualquier mamada xD ');
     listar();
 });
 
