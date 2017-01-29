@@ -29,7 +29,7 @@ try {
         $ruta = "../fotos_documentos/".$archivo['name'];
         
         if(move_uploaded_file($archivo['tmp_name'], $ruta)){
-            $objDocumento->setFoto($target_path);
+            $objDocumento->setFoto($ruta);
         }
     }
     
