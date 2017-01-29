@@ -134,23 +134,18 @@ class Documento extends Conexion {
                 $nuevoCodigoDocumento = $resultado["nc"];
                 $this->setCodigo_documento($nuevoCodigoDocumento);
                 
-                if($this->getFoto() == null){
-                    $tieneFoto = "no";
-                }else{
-                    $tieneFoto = "si";
-                }
                 
                 $sql = "INSERT INTO documento(codigo_documento, numero_documento, descripcion, monto, fecha_y_hora, foto, estado, codigo_usuario, codigo_tipo_documento)
                                       VALUES (:p_codigo_documento, :p_numero_documento, :p_descripcion, :p_monto, :p_fecha, :p_foto,'E', :p_codigo_usuario, :p_codigo_td);";
 
                 $sentencia = $this->dblink->prepare($sql);
-
+                
                 $sentencia->bindParam(":p_codigo_documento", $this->getCodigo_documento());
                 $sentencia->bindParam(":p_numero_documento", $this->getNumero_documento());
                 $sentencia->bindParam(":p_descripcion", $this->getDescripcion());
                 $sentencia->bindParam(":p_monto", $this->getMonto());
                 $sentencia->bindParam(":p_fecha", date("Y-m-d"));
-                $sentencia->bindParam(":p_foto", $tieneFoto);
+                $sentencia->bindParam(":p_foto", $this->getFoto());
                 $sentencia->bindParam(":p_codigo_usuario", $this->getCodigo_usuario());
                 $sentencia->bindParam(":p_codigo_td", $this->getCodigo_tipo_documento());
                 //Ejecutar la sentencia preparada
@@ -159,10 +154,6 @@ class Documento extends Conexion {
                 $sql = "update correlativo set numero = numero + 1 where tabla = 'documento'";
                 $sentencia = $this->dblink->prepare($sql);
                 $sentencia->execute();
-                
-                if($this->getFoto() != null){
-                    $this->cargarFoto($this->getFoto(), $this->getCodigo_documento());
-                }
                 
                 $this->dblink->commit();
                 return true; //significa que todo se ha ejecutado correctamente
@@ -260,10 +251,6 @@ class Documento extends Conexion {
             throw $exc;
         }
         return false;
-    }
-    
-    public function cargarFoto($archivoFoto, $idFoto){
-        move_uploaded_file($archivoFoto, "../fotos_documentos/".$idFoto.".jpg");
     }
 
 }

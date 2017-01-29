@@ -218,44 +218,7 @@ function eliminar(codigoDocumento) {
             });
 }
 
-
-$("#frmgrabar").submit(function(evento){
-    evento.preventDefault();
-    
-    if (! confirm("Esta seguro de grabar los datos del producto")){
-        return 0;
-    }
-    
-    var archivo_foto = $('#foto').prop('files')[0];
-    
-    var datos_frm = new FormData();
-    datos_frm.append( "p_datos", $("#frmgrabar").serialize() );
-    datos_frm.append( "p_foto", archivo_foto);
-    
-    $.ajax({
-        url: service+"documento.agregar.editar.php",
-        dataType: 'text',  
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: datos_frm,                         
-        type: 'post',
-        success: function(resultado){
-            //alert(resultado);
-            if (resultado === "exito"){
-                document.location.reload();
-            }
-        },
-        error: function(error){
-             alert(error.responseText);
-        }
-     });
-    
-    
-});
-
-
-/*$("#frmgrabar").submit(function (evento) {
+$("#frmgrabar").submit(function (evento) {
     evento.preventDefault();
     swal({
         title: "Confirme",
@@ -274,7 +237,6 @@ $("#frmgrabar").submit(function(evento){
                                service+"documento.agregar.editar.php",
                             {
                                 p_datosFormulario: $("#frmgrabar").serialize(),
-                                p_foto: $('#foto').prop('files')[0]
                             }
                     ).done(function (resultado) {
                         var datosJSON = resultado;
@@ -291,7 +253,7 @@ $("#frmgrabar").submit(function(evento){
                     });
                 }
             });
-});*/
+});
 
 $("#btnagregar").click(function () {
     $("#txttipooperacion").val("agregar");
