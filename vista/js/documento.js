@@ -240,7 +240,7 @@ $("#frmgrabar").submit(function(evento){
         data: datos_frm,                         
         type: 'post',
         success: function(resultado){
-            //alert(resultado);
+            alert(resultado);
             if (resultado === "exito"){
                 document.location.reload();
             }
