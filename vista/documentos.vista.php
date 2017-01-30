@@ -56,8 +56,9 @@ require '../util/funciones/definiciones.php';
                                                 </div>
                                                 <div class="col-xs-6">
                                                     <p>Foto de la boleta: </p>
-                                                    <input type="file" name="txtfoto" id="txtfoto" class="form-control">
-                                                    <?php echo "<img src='.txtfoto'>"; ?>
+                                                    <input type="file" name="archivo" id="archivo" />
+                                                    <input type="submit" id="boton_subir" value="Subir" class="btn btn-success" />
+                                                    <div id="archivos_subidos"></div>
                                                 </div>
                                                 
                                             </div>
